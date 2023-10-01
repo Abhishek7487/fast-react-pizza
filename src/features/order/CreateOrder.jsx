@@ -152,13 +152,12 @@ export async function action({ request }) {
 
   if (Object.keys(errors).length > 0) return errors;
 
-  // // If everything is OK create new order and redirect.
-  // const newOrder = await createOrder(order);
+  // If everything is OK create new order and redirect.
+  const newOrder = await createOrder(order);
 
-  // store.dispatch(clearCart());
+  store.dispatch(clearCart());
 
-  // return redirect(`/order/${newOrder.id}`);
-  return null;
+  return redirect(`/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
